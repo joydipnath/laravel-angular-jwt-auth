@@ -13,6 +13,10 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { RequestResetComponent } from './components/password/request-reset/request-reset.component';
 import { ResponseResetComponent } from './components/password/response-reset/response-reset.component';
 
+import { LoginSignupService } from './services/auth/login-signup.service';
+import { TokenService } from './services/auth/token.service';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +34,10 @@ import { ResponseResetComponent } from './components/password/response-reset/res
     HttpClientModule,
 
   ],
-  providers: [],
+  providers: [
+    LoginSignupService,
+    TokenService
+  ],
   bootstrap: [AppComponent]
 })
 
