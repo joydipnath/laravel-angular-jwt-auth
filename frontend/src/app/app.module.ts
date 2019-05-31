@@ -15,6 +15,7 @@ import { ResponseResetComponent } from './components/password/response-reset/res
 
 import { LoginSignupService } from './services/auth/login-signup.service';
 import { TokenService } from './services/auth/token.service';
+import { AuthService } from './services/auth/auth.service';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { TokenService } from './services/auth/token.service';
   ],
   providers: [
     LoginSignupService,
-    TokenService
+    TokenService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
