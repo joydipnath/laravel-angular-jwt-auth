@@ -14,7 +14,7 @@ export class TokenService {
 
   handle(token){
   	this.set(token);
-  	// console.log(this.isValid());
+  	console.log(this.isValid());
   }
 
   set(token){
@@ -26,7 +26,7 @@ export class TokenService {
   }
 
   remove(){
-  	localStorage.getItem('token');
+  	localStorage.removeItem('token');
   }
 
   isValid(){

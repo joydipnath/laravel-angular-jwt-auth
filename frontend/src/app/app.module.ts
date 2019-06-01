@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule }  from '@angular/common/http';
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -16,6 +15,9 @@ import { ResponseResetComponent } from './components/password/response-reset/res
 import { LoginSignupService } from './services/auth/login-signup.service';
 import { TokenService } from './services/auth/token.service';
 import { AuthService } from './services/auth/auth.service';
+import { AfterLoginService } from './services/auth/after-login.service';
+import { BeforeLoginService } from './services/auth/before-login.service';
+
 
 
 @NgModule({
@@ -38,7 +40,9 @@ import { AuthService } from './services/auth/auth.service';
   providers: [
     LoginSignupService,
     TokenService,
-    AuthService
+    AuthService,
+    AfterLoginService,
+    BeforeLoginService
   ],
   bootstrap: [AppComponent]
 })
