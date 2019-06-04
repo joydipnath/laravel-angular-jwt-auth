@@ -1,27 +1,20 @@
-import { Injectable } from '@angular/core';
+import { InjectionToken } from '@angular/core';
 
-// export class AppComponent {
+export let APP_CONFIG = new InjectionToken('app.config');
 
-// 	public CONFIG = {
-// 		'loginUrl' : 'http://localhost:8000/api/login',
-// 	}
-// }
+const baseUrl: any =  'http://localhost:8000/api/';
 
+export  const AppConfig: any = {
 
-// export let APP_CONFIG = new Injectable('app.config');
+	routes:{
+		error404: '404'
+	},
 
-// APP_CONFIG = {
+	
+	loginUrl: baseUrl+'login',
 
-	// loginUrl: 'http://localhost:8000/api/login'
+	signupUrl: baseUrl+'signup',
 
-// }
+	sendPasswordResetLinkUrl: baseUrl+'sendPasswordResetLink'
 
-
-// export APP_CONFIG
-
-// @Injectable()
-// export class Globals {
-
-//   loginUrl: 'http://localhost:8000/api/login';
-  
-// }
+}

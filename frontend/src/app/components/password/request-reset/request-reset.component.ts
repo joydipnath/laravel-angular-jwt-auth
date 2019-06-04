@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginSignupService } from '../../../services/auth/login-signup.service';
-import { SnotifyModule, SnotifyService } from 'ng-snotify';
+import { SnotifyService } from 'ng-snotify';
 
 @Component({
   selector: 'app-request-reset',
