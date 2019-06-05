@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Motivate'),
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +52,14 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'http://localhost:4200/'),
+
+    // Auth urls
+
+    'response-password-reset' => 'response-password-reset',
+
+    'appurl' => 'http://localhost:4200/',
+
 
     'asset_url' => env('ASSET_URL', null),
 
