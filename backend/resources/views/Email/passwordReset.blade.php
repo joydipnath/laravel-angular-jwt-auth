@@ -3,9 +3,8 @@
 
 Click on the button below to change password
 
-@component('mail::button', ['url' => 'http://localhost:4200/response-password-reset?token='.{{$token}}])
-{{--  --}}
-{{-- {{ config('app.appurl') }}.{{ config('app.response-password-reset') }}.'?token='.{{$token}} --}}
+@component('mail::button', ['url' => config('app.appurl').config('app.response-password-reset').'?token='.$token->token])
+
 Reset Password
 @endcomponent
 

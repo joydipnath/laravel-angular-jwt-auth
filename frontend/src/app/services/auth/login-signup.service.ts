@@ -23,4 +23,8 @@ export class LoginSignupService {
   	return this.http.post(AppConfig.sendPasswordResetLinkUrl, data);
   }
 
+  changePassword(data){
+    return this.http.post(AppConfig.eesetPasswordUrl, data);
+  }
+
 }
