@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LoginSignupService } from '../../../services/auth/login-signup.service';
 
 @Component({
@@ -19,6 +19,7 @@ export class ResponseResetComponent implements OnInit {
 
 	constructor(
 		private route: ActivatedRoute,
+		private router: Router,
 		private LoginSignup: LoginSignupService
 	
 	) { 
@@ -37,11 +38,12 @@ export class ResponseResetComponent implements OnInit {
 			error => this.handleError(error)
 		);
 	}
-	handleResponse(data){
 
+	handleResponse(data){
+		this.router.navigateByUrl('/login');
 	}
 
 	handleError(error){
-
+		return this.error = error.error.error;
 	}
 }
