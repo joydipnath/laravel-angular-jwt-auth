@@ -15,13 +15,15 @@ export class RequestResetComponent implements OnInit {
 
   constructor(
   	private LoginSignup: LoginSignupService,
-  	private notify: SnotifyService
+  	private notify: SnotifyService,
+    private Notify: SnotifyService
   	) { }
 
   ngOnInit() {
   }
 
   onSubmit(){
+    this.Notify.info('Wait...' ,{timeout:5000})
   	this.LoginSignup.sendPasswordResetLink(this.form).subscribe(
   		data => this.handleResponse(data),
   		error => this.notify.error(error.error.error)
@@ -29,7 +31,7 @@ export class RequestResetComponent implements OnInit {
   }
 
   handleResponse(res){
-
+    this.Notify.success(res.data,{timeout:0});
   	this.form.email = null;
   }
 

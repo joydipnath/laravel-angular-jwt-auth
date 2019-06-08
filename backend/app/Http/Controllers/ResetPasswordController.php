@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Symfony\Component\HttpFoundation\Response;
-use Mail;
+use Illuminate\Support\Facades\Mail;
 use App\Mail\ResetPasswordMail;
-use DB;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class ResetPasswordController extends Controller
 {
@@ -18,7 +18,7 @@ class ResetPasswordController extends Controller
     {
     	// return $request->all();
     	if(! $this->validateEmail($request->email)){
-    		return $this->failResponse();
+    		return $this->failedResponse();
     	}
 
     	$this->send($request->email);
@@ -57,11 +57,11 @@ class ResetPasswordController extends Controller
     	return !!User::where('email', $email)->first(); // !! makes it boolean
     }
 
-    public function failResponse()
+    public function failedResponse()
     {
     	return response()->json([
-    		'error'=> "Email doesn\'t found on our database."
-    	], Response::HTTP_NOT_FOUND);
+            'error' => 'Email does\'t found on our database'
+        ], Response::HTTP_NOT_FOUND);
     }
 
     public function successResponse()

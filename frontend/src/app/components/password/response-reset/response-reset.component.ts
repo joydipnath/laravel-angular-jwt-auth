@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LoginSignupService } from '../../../services/auth/login-signup.service';
+import { SnotifyService } from 'ng-snotify';
 
 @Component({
   selector: 'app-response-reset',
@@ -20,7 +21,8 @@ export class ResponseResetComponent implements OnInit {
 	constructor(
 		private route: ActivatedRoute,
 		private router: Router,
-		private LoginSignup: LoginSignupService
+		private LoginSignup: LoginSignupService,
+		private Notify: SnotifyService
 	
 	) { 
 
@@ -40,10 +42,22 @@ export class ResponseResetComponent implements OnInit {
 	}
 
 	handleResponse(data){
-		this.router.navigateByUrl('/login');
+		let _router = this.router;
+		
+		this.Notify.confirm('Done!, Now login with new Password', {
+		      buttons:[
+		        {text: 'Okay', 
+		        action: toster =>{
+		           _router.navigateByUrl('/login'),
+		           this.Notify.remove(toster.id)
+		          }
+		      },
+		      ]
+		})
+		// this.router.navigateByUrl('/login');
 	}
 
 	handleError(error){
-		return this.error = error.error.error;
+		return this.error = error.error.errors;
 	}
 }
