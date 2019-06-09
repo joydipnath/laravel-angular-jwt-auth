@@ -58,7 +58,7 @@ export class ResponseResetComponent implements OnInit {
 	}
 
 	handleError(error){
-		console.log(error);
+		// console.log(error);
 		return this.error = error.error.errors;
 	}
 }
