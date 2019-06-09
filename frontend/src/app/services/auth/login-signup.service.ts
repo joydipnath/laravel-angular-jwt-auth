@@ -11,7 +11,7 @@ export class LoginSignupService {
   constructor(private http: HttpClient) { }
 
   login(data){
-  	return this.http.post(AppConfig.loginUrl, data);
+  	return this.http.post(AppConfig.loginUrl, data); // getting the API endpoints from app.config.ts
   }
 
   signup(data){
@@ -24,7 +24,7 @@ export class LoginSignupService {
   }
 
   changePassword(data){
-    return this.http.post(AppConfig.eesetPasswordUrl, data);
+    return this.http.post(AppConfig.resetPasswordUrl, data);
   }
 
 }

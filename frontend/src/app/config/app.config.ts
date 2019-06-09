@@ -17,6 +17,6 @@ export  const AppConfig: any = {
 
 	sendPasswordResetLinkUrl: baseUrl+'sendPasswordResetLink',
 
-	eesetPasswordUrl: baseUrl+'resetPassword'
+	resetPasswordUrl: baseUrl+'resetPassword'
 
 }

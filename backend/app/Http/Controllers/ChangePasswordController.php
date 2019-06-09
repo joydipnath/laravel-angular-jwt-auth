@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use App\User;
 class ChangePasswordController extends Controller
 {
-    public function process(ChangePasswordRequest $request)
+    public function index(ChangePasswordRequest $request)
     {
         return $this->getPasswordResetTableRow($request)->count()> 0 ? $this->changePassword($request) : $this->tokenNotFoundResponse();
     }

@@ -43,7 +43,7 @@ export class ResponseResetComponent implements OnInit {
 
 	handleResponse(data){
 		let _router = this.router;
-		
+
 		this.Notify.confirm('Done!, Now login with new Password', {
 		      buttons:[
 		        {text: 'Okay', 
@@ -53,11 +53,12 @@ export class ResponseResetComponent implements OnInit {
 		          }
 		      },
 		      ]
-		})
+		});
 		// this.router.navigateByUrl('/login');
 	}
 
 	handleError(error){
+		console.log(error);
 		return this.error = error.error.errors;
 	}
 }

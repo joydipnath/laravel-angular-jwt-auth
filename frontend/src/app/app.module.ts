@@ -19,6 +19,7 @@ import { AfterLoginService } from './services/auth/after-login.service';
 import { BeforeLoginService } from './services/auth/before-login.service';
 
 import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -37,7 +38,8 @@ import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    SnotifyModule
+    SnotifyModule,
+    BrowserAnimationsModule
   ],
   providers: [
     LoginSignupService,
